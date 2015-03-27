@@ -11,6 +11,9 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.update_attributes(order_item_params)
     @order_items = @order.order_items
+    respond_to do |format|
+      format.js {render inline: "location.reload();" }
+    end
   end
 
   def destroy
