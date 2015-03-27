@@ -1,0 +1,11 @@
+<h1>Hi, A new order has been added: </h1>
+
+<p>
+	<%@order.each do |order| %>
+	<ul>
+		<li><%= order.product.name%></li>
+	</ul>
+	<%end%>
+</p>
+
+<p>Thanks</p> 

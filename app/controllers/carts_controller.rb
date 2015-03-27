@@ -21,7 +21,10 @@ class CartsController < ApplicationController
 	)
 
 #custom code here
-
+	if charge["paid"] == true
+		OrderMailer.new_order(current_order.order_items).deliver
+    	redirect_to root_path
+	end
 
 
 
